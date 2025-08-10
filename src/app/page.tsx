@@ -33,13 +33,13 @@ export default function Home() {
     <QueryClientProvider client={queryClient}>
       <main className="min-h-screen p-4 relative">
         <div className="flex w-full justify-between items-center">
-          <h1 className="text-lg font-bold flex-1 sm:w-80">
+          <div className="text-lg font-bold flex-1 sm:w-80">
             <a href="https://www.freestyle.sh">freestyle.sh</a>
-          </h1>
+          </div>
           <Image
             className="dark:invert mx-2"
             src={LogoSvg}
-            alt="Adorable Logo"
+            alt="Access.Able Logo - Universal Design AI Builder"
             width={36}
             height={36}
           />
@@ -50,9 +50,15 @@ export default function Home() {
 
         <div>
           <div className="w-full max-w-lg px-4 sm:px-0 mx-auto flex flex-col items-center mt-16 sm:mt-24 md:mt-32 col-start-1 col-end-1 row-start-1 row-end-1 z-10">
-            <p className="text-neutral-600 text-center mb-6 text-3xl sm:text-4xl md:text-5xl font-bold">
-              Let AI Cook
-            </p>
+            <div className="text-center mb-8">
+              <h1 className="text-neutral-800 dark:text-neutral-200 text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+                Access.Able
+              </h1>
+              <p className="text-neutral-600 dark:text-neutral-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                AI-powered app builder with Universal Design principles baked in. 
+                Create accessible, inclusive experiences for everyone.
+              </p>
+            </div>
 
             <div className="w-full relative my-5">
               <div className="relative w-full max-w-full overflow-hidden">
@@ -73,16 +79,17 @@ export default function Home() {
                     <PromptInputTextareaWithTypingAnimation />
                     <PromptInputActions>
                       <Button
-                        variant={"ghost"}
+                        variant={"default"}
                         size="sm"
                         onClick={handleSubmit}
                         disabled={isLoading || !prompt.trim()}
-                        className="h-7 text-xs"
+                        className="h-8 text-sm font-medium"
+                        aria-label={isLoading ? "Creating accessible app..." : "Start creating accessible app"}
                       >
                         <span className="hidden sm:inline">
-                          Start Creating ⏎
+                          Build Accessible App ⏎
                         </span>
-                        <span className="sm:hidden">Create ⏎</span>
+                        <span className="sm:hidden">Build ⏎</span>
                       </Button>
                     </PromptInputActions>
                   </PromptInput>
@@ -93,7 +100,8 @@ export default function Home() {
             <div className="mt-8 mb-16">
               <a
                 href="https://freestyle.sh"
-                className="border rounded-md px-4 py-2 mt-4 text-sm font-semibold transition-colors duration-200 ease-in-out cursor-pointer w-full max-w-72 text-center block"
+                className="border rounded-md px-4 py-2 mt-4 text-sm font-semibold transition-colors duration-200 ease-in-out cursor-pointer w-full max-w-72 text-center block hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="Learn more about Freestyle.sh - JavaScript infrastructure for AI"
               >
                 <span className="block font-bold">
                   By <span className="underline">freestyle.sh</span>
@@ -105,9 +113,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="border-t py-8 mx-0 sm:-mx-4">
+        <section className="border-t py-8 mx-0 sm:-mx-4" aria-labelledby="user-apps-heading">
+          <h2 id="user-apps-heading" className="sr-only">Your Applications</h2>
           <UserApps />
-        </div>
+        </section>
       </main>
     </QueryClientProvider>
   );
@@ -115,27 +124,28 @@ export default function Home() {
 
 function Examples({ setPrompt }: { setPrompt: (text: string) => void }) {
   return (
-    <div className="mt-2">
+    <div className="mt-2" role="region" aria-labelledby="examples-heading">
+      <h3 id="examples-heading" className="sr-only">Example prompts to get started</h3>
       <div className="flex flex-wrap justify-center gap-2 px-2">
         <ExampleButton
-          text="Dog Food Marketplace"
-          promptText="Build a dog food marketplace where users can browse and purchase premium dog food."
+          text="Accessible E-commerce"
+          promptText="Build an accessible e-commerce site with screen reader support, keyboard navigation, and high contrast options for selling artisan goods."
           onClick={(text) => {
             console.log("Example clicked:", text);
             setPrompt(text);
           }}
         />
         <ExampleButton
-          text="Personal Website"
-          promptText="Create a personal website with portfolio, blog, and contact sections."
+          text="Inclusive Portfolio"
+          promptText="Create an accessible personal portfolio with proper heading structure, alt text for images, and keyboard navigation for showcasing creative work."
           onClick={(text) => {
             console.log("Example clicked:", text);
             setPrompt(text);
           }}
         />
         <ExampleButton
-          text="Burrito B2B SaaS"
-          promptText="Build a B2B SaaS for burrito shops to manage inventory, orders, and delivery logistics."
+          text="Universal Dashboard"
+          promptText="Build a universally designed admin dashboard with voice commands, screen reader support, and customizable layouts for managing business operations."
           onClick={(text) => {
             console.log("Example clicked:", text);
             setPrompt(text);

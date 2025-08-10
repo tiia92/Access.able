@@ -2,18 +2,30 @@
   <img src="icon.png" alt="description" width="75">
 </p>
 
-# Adorable
+# Access.Able
 
-Open-source version of **Lovable** - an AI agent that can make websites and apps through a chat interface.
+AI-powered app builder with **Universal Design principles** and **accessibility compliance** built-in. Create inclusive digital experiences that work for everyone.
 
-For guidance on building app builders with AI, see the [Freestyle guide on Building an App Builder](https://docs.freestyle.sh/guides/app-builder).
+## Universal Design Principles
+
+Access.Able automatically applies the seven Universal Design principles to every application:
+
+1. **Equitable Use** - Useful for people with diverse abilities
+2. **Flexibility in Use** - Accommodates preferences and abilities  
+3. **Simple & Intuitive Use** - Easy to understand regardless of experience
+4. **Perceptible Information** - Effective communication for all sensory abilities
+5. **Tolerance for Error** - Minimizes consequences of mistakes
+6. **Low Physical Effort** - Efficient and comfortable to use
+7. **Size and Space** - Appropriate for any user or assistive device
 
 ## Features
 
-- Chat interface for interacting with AI code assistants
-- Patch-based code editing with user approval
-- Git integration for version control
-- Preview capabilities for code changes
+- **AI-Powered Universal Design Builder** - Chat interface that outputs accessible apps by default
+- **WCAG 2.2 AA Compliance** - Automatic accessibility compliance checking
+- **GitHub Sync & Remediation** - Retrofit accessibility into existing projects
+- **Accessibility Testing Suite** - Screen reader simulation, color blindness filters, keyboard navigation
+- **Inclusive Component Library** - Pre-built accessible components with ARIA support
+- **Universal Design Validation** - Real-time scoring against all 7 principles
 
 ## Setup Instructions
 
@@ -31,8 +43,8 @@ For guidance on building app builders with AI, see the [Freestyle guide on Build
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/freestyle-sh/adorable
-   cd adorable
+   git clone https://github.com/freestyle-sh/access-able
+   cd access-able
    ```
 
 2. Install dependencies:
@@ -50,7 +62,7 @@ For guidance on building app builders with AI, see the [Freestyle guide on Build
 
    ```
    # Database
-   DATABASE_URL=postgresql://username:password@localhost:5432/adorable
+   DATABASE_URL=postgresql://username:password@localhost:5432/access_able
 
    # Anthropic API
    ANTHROPIC_API_KEY=your_anthropic_api_key
@@ -70,7 +82,7 @@ For guidance on building app builders with AI, see the [Freestyle guide on Build
 The easiest way to run Redis locally is with Docker:
 
 ```bash
-docker run --name adorable-redis -p 6379:6379 -d redis
+docker run --name access-able-redis -p 6379:6379 -d redis
 ```
 
 This will start a Redis server on port 6379. If you already have Redis running, you can skip this step.
@@ -123,7 +135,9 @@ This automatically enables the Morph fast edit tool which provides faster code m
 
 ## Developer Documentation
 
-- [Forking Guide](./docs/forking.md) - Comprehensive guide for developers working with this codebase
+- [Forking Guide](./docs/forking.md) - Guide for developers working with this accessibility-focused codebase
+- [Universal Design Implementation](./docs/universal-design.md) - How Universal Design principles are implemented
+- [Accessibility Testing](./docs/accessibility-testing.md) - Testing guidelines and tools
 
 ## Deployment
 

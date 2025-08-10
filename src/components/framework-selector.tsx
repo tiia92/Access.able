@@ -30,8 +30,9 @@ export function FrameworkSelector({
           <Button
             variant="outline"
             size="sm"
-            className="h-7 gap-2 px-2 text-xs bg-transparent border-none hover:bg-gray-100 hover:bg-opacity-50 shadow-none"
+            className="h-8 gap-2 px-3 text-sm bg-transparent border-none hover:bg-accent hover:bg-opacity-50 shadow-none focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
             style={{ boxShadow: "none" }}
+            aria-label={`Selected framework: ${templates[value].name}. Click to change framework.`}
           >
             <Image
               src={templates[value].logo}
@@ -48,12 +49,16 @@ export function FrameworkSelector({
           align="start"
           className="min-w-[8rem] !shadow-none border border-gray-200"
           style={{ boxShadow: "none" }}
+          role="menu"
+          aria-label="Select framework for your accessible app"
         >
           {Object.entries(templates).map(([key, template]) => (
             <DropdownMenuItem
               key={key}
               onClick={() => onChange(key)}
               className="gap-2 text-xs"
+              role="menuitem"
+              aria-label={`Select ${template.name} framework`}
             >
               <Image
                 src={template.logo}

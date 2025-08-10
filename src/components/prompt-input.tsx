@@ -6,10 +6,10 @@ export function PromptInputTextareaWithTypingAnimation() {
   const placeholderRef = useRef<HTMLTextAreaElement>(null);
 
   const exampleIdeas = [
-    "a dog food marketplace",
-    "a personal portfolio website for my mother's bakery",
-    "a B2B SaaS for burrito shops to sell burritos",
-    "a social network for coders to find grass to touch",
+    "an accessible e-commerce platform with screen reader support",
+    "a universally designed portfolio with keyboard navigation",
+    "an inclusive dashboard with voice commands and high contrast",
+    "an accessible learning platform for diverse abilities",
   ];
 
   const { displayText } = useTypingAnimation({
@@ -26,6 +26,7 @@ export function PromptInputTextareaWithTypingAnimation() {
       ref={placeholderRef}
       placeholder={displayText}
       className="min-h-[100px] w-full bg-transparent dark:bg-transparent backdrop-blur-sm pr-12"
+      aria-label="Describe the accessible application you want to build"
       onBlur={() => {}}
     />
   );
